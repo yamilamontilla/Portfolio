@@ -1,0 +1,17 @@
+# Ignorar todo por defecto
+*
+
+# Excepciones: Permitir únicamente los archivos esenciales del portfolio
+!.gitignore
+!index.html
+!styles.css
+!script.js
+!img/
+!img/*
+
+# Ignorar archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

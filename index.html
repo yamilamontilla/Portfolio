@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0806" />
+<meta id="meta-description" name="description" content="Yamila Montilla — Estudiante de Ingeniería de Computadores y desarrolladora backend en Madrid. Java, Python, C, VHDL." />
+<title id="page-title">Yamila Montilla — Backend Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<a href="#top" class="skip-link" data-i18n="a11y.skip">Saltar al contenido</a>
+
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-glow bg-glow--a"></div>
+  <div class="bg-glow bg-glow--b"></div>
+  <div class="bg-grid"></div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header id="site-header" class="site-header">
+  <div class="header-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">YM</span>
+      <span class="logo-sub font-mono" data-i18n="header.logoSub">ENGINEERING</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a href="#about" class="nav-link"><span class="nav-index font-mono">01</span><span data-i18n="nav.about">Sobre mí</span></a></li>
+        <li><a href="#projects" class="nav-link"><span class="nav-index font-mono">02</span><span data-i18n="nav.projects">Proyectos</span></a></li>
+        <li><a href="#toolbox" class="nav-link"><span class="nav-index font-mono">03</span><span data-i18n="nav.toolbox">Herramientas</span></a></li>
+        <li><a href="#journey" class="nav-link"><span class="nav-index font-mono">04</span><span data-i18n="nav.journey">Recorrido</span></a></li>
+        <li><a href="#contact" class="nav-link"><span class="nav-index font-mono">05</span><span data-i18n="nav.contact">Contacto</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="header-controls">
+      <button id="search-toggle" class="control-btn icon-btn" type="button" aria-label="Search" title="⌘K">
+        <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+      </button>
+      <button id="lang-toggle" class="control-btn lang-btn font-mono" type="button" aria-label="Switch language / Cambiar idioma">
+        <span id="lang-code">ES</span>
+      </button>
+      <button id="theme-toggle" class="control-btn icon-btn" type="button" aria-label="Toggle theme">
+        <i class="ph ph-moon-stars theme-icon theme-icon-dark" aria-hidden="true"></i>
+        <i class="ph ph-sun theme-icon theme-icon-light" aria-hidden="true"></i>
+      </button>
+      <button id="menu-toggle" class="control-btn icon-btn menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <i class="ph ph-list menu-icon-open" aria-hidden="true"></i>
+        <i class="ph ph-x menu-icon-close" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="scroll-sentinel" id="scroll-sentinel" aria-hidden="true"></div>
+
+<!-- ============ MOBILE NAV ============ -->
+<div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+  <nav aria-label="Mobile" class="mobile-nav-inner">
+    <ul>
+      <li style="--i:0"><a href="#about" class="mobile-nav-link"><span class="nav-index font-mono">01</span><span data-i18n="nav.about">Sobre mí</span></a></li>
+      <li style="--i:1"><a href="#projects" class="mobile-nav-link"><span class="nav-index font-mono">02</span><span data-i18n="nav.projects">Proyectos</span></a></li>
+      <li style="--i:2"><a href="#toolbox" class="mobile-nav-link"><span class="nav-index font-mono">03</span><span data-i18n="nav.toolbox">Herramientas</span></a></li>
+      <li style="--i:3"><a href="#journey" class="mobile-nav-link"><span class="nav-index font-mono">04</span><span data-i18n="nav.journey">Recorrido</span></a></li>
+      <li style="--i:4"><a href="#contact" class="mobile-nav-link"><span class="nav-index font-mono">05</span><span data-i18n="nav.contact">Contacto</span></a></li>
+    </ul>
+  </nav>
+  <div class="mobile-nav-footer">
+    <a href="https://github.com/yamilamontilla" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+    <a href="https://www.linkedin.com/in/yamila-montilla/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+    <a href="mailto:yamila.montilla@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+  </div>
+</div>
+
+<!-- ============ COMMAND PALETTE ============ -->
+<div class="palette-backdrop" id="palette-backdrop" aria-hidden="true">
+  <div class="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+    <div class="palette-input-row">
+      <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+      <input type="text" id="palette-input" class="palette-input font-mono" autocomplete="off" spellcheck="false" data-i18n-placeholder="palette.placeholder" placeholder="Buscar proyectos o tecnologías…" />
+      <kbd class="palette-esc font-mono">ESC</kbd>
+    </div>
+    <div class="palette-results" id="palette-results"></div>
+  </div>
+</div>
+
+<main id="main-content">
+
+  <!-- ============ HERO ============ -->
+  <section id="top" class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hud-strip font-mono reveal" role="status">
+          <span class="hud-item"><span class="hud-dot" aria-hidden="true"></span><span data-i18n="hero.hud.status">SYSTEM: ONLINE</span></span>
+          <span class="hud-sep" aria-hidden="true">/</span>
+          <span class="hud-item" data-i18n="hero.hud.loc">MADRID, ES</span>
+          <span class="hud-sep" aria-hidden="true">/</span>
+          <span class="hud-item" id="hud-build">BUILD: 2026</span>
+        </div>
+
+        <h1 class="hero-title reveal" style="--reveal-delay:60ms">Yamila Montilla</h1>
+        <p class="hero-role font-mono reveal" style="--reveal-delay:120ms" data-i18n="hero.role">Estudiante de Ingeniería de Computadores · Desarrolladora Backend</p>
+        <p class="hero-desc reveal" style="--reveal-delay:180ms" data-i18n="hero.desc">Diseño software desde la lógica hacia arriba: memoria, estructuras de datos y arquitectura limpia antes que la interfaz. Java y Python en el backend, C y VHDL para entender qué ocurre por debajo.</p>
+
+        <div class="hero-actions reveal" style="--reveal-delay:240ms">
+          <a href="#projects" class="btn btn-primary magnetic" data-i18n="hero.cta.work">Ver proyectos</a>
+          <a href="#contact" class="btn btn-ghost magnetic" data-i18n="cta.contact">Hablemos</a>
+        </div>
+
+        <div class="social-row reveal" style="--reveal-delay:300ms">
+          <a href="https://github.com/yamilamontilla" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+          <a href="https://www.linkedin.com/in/yamila-montilla/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="mailto:yamila.montilla@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" style="--reveal-delay:160ms">
+        <div class="hero-frame">
+          <img src="img/foto.jpeg" alt="Foto de Yamila Montilla" class="hero-photo" width="440" height="440" loading="eager" />
+          <span class="hero-frame-tick tl" aria-hidden="true"></span>
+          <span class="hero-frame-tick br" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section about-section">
+    <div class="section-inner">
+      <div class="about-head reveal">
+        <h2 class="section-title" data-i18n="about.title">Sobre mí</h2>
+        <p class="about-intro" data-i18n="about.intro">Empecé a programar queriendo entender qué pasa por debajo del código, y ese impulso no se me ha ido: sigo prefiriendo abrir la caja antes de usarla. Hoy eso se traduce en backend con Java y Python, estructuras de datos y memoria en C, y algo de hardware en VHDL, para no perder de vista ninguna capa del sistema.</p>
+      </div>
+
+      <div class="value-grid">
+        <div class="value-card reveal">
+          <i class="ph ph-code value-icon" aria-hidden="true"></i>
+          <h3 data-i18n="about.value1.title">Desarrollar</h3>
+          <p data-i18n="about.value1.desc">Solidez en programación orientada a objetos con Java y Python: código modular, testing automatizado con JUnit y una arquitectura que se puede leer sin manual de instrucciones.</p>
+        </div>
+        <div class="value-card reveal" style="--reveal-delay:80ms">
+          <i class="ph ph-lightning value-icon" aria-hidden="true"></i>
+          <h3 data-i18n="about.value2.title">Resolver</h3>
+          <p data-i18n="about.value2.desc">Pensamiento algorítmico y gestión de memoria en C, más la costumbre de resolver problemas en directo bajo presión: en un backend o en medio de un estadio lleno.</p>
+        </div>
+        <div class="value-card reveal" style="--reveal-delay:160ms">
+          <i class="ph ph-users-three value-icon" aria-hidden="true"></i>
+          <h3 data-i18n="about.value3.title">Colaborar</h3>
+          <p data-i18n="about.value3.desc">Liderazgo de equipos, comunicación bilingüe en español e inglés, y la capacidad de explicar un problema técnico a quien no lo es, sin perder precisión.</p>
+        </div>
+      </div>
+
+      <div class="about-code reveal">
+        <div class="code-window">
+          <div class="code-window-bar">
+            <span class="code-dot" aria-hidden="true"></span>
+            <span class="code-dot" aria-hidden="true"></span>
+            <span class="code-dot" aria-hidden="true"></span>
+            <span class="code-filename font-mono">profile.json</span>
+          </div>
+          <pre class="code-body font-mono"><code>{
+  <span class="tok-key">"name"</span>: <span class="tok-str">"Yamila Montilla"</span>,
+  <span class="tok-key">"role"</span>: <span class="tok-str tok-role" data-i18n="about.code.role">"Ingeniería de Computadores · Backend"</span>,
+  <span class="tok-key">"based_in"</span>: <span class="tok-str">"Madrid, ES"</span>,
+  <span class="tok-key">"stack"</span>: [<span class="tok-str">"Java"</span>, <span class="tok-str">"Python"</span>, <span class="tok-str">"C"</span>, <span class="tok-str">"SQL"</span>, <span class="tok-str">"VHDL"</span>],
+  <span class="tok-key">"spoken"</span>: { <span class="tok-key">"es"</span>: <span class="tok-str tok-status">"native"</span>, <span class="tok-key">"en"</span>: <span class="tok-str tok-status">"fluent"</span> },
+  <span class="tok-key">"status"</span>: <span class="tok-str tok-status" data-i18n="about.code.status">"open_to_work"</span>
+}</code></pre>
+        </div>
+
+        <div class="intl-strip">
+          <span class="intl-label font-mono" data-i18n="about.intl">Perfil internacional</span>
+          <span class="intl-flag">🇪🇸 <span data-i18n="about.intl.es">España</span></span>
+          <span class="intl-flag">🇧🇪 <span data-i18n="about.intl.be">Bélgica</span></span>
+          <span class="intl-flag">🇦🇪 <span data-i18n="about.intl.ae">EAU</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section projects-section">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2 class="section-title" data-i18n="projects.title">Proyectos</h2>
+        <p class="section-subtitle" data-i18n="projects.subtitle">Siete repositorios reales y este mismo sitio. Cada tarjeta lleva directo a su código.</p>
+      </div>
+
+      <div class="case-list">
+
+        <a class="case-card grow-link" href="https://github.com/yamilamontilla/DataStructures.git" target="_blank" rel="noopener" id="proj-1" data-search="data structures c nodos arboles listas pilas colas grafos">
+          <span class="case-icon"><i class="devicon-c-plain colored"></i></span>
+          <span class="case-body">
+            <span class="case-title">Data Structures in C</span>
+            <span class="stack-badges">
+              <span class="badge"><i class="devicon-c-plain colored"></i>C</span>
+            </span>
+            <span class="case-text" data-i18n="projects.p1.desc">Repositorio con implementaciones modulares de tipos de datos abstractos: listas, árboles, grafos y algoritmos de búsqueda, ordenación y resolución de colisiones. Arquitectura modular en .h/.c, asignación dinámica y pruebas unitarias en main.c.</span>
+            <span class="case-link"><span data-i18n="projects.viewGithub">Ver en GitHub</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </span>
+        </a>
+
+        <a class="case-card grow-link" href="https://github.com/yamilamontilla/ParkingMeter_FSM_VHDL.git" target="_blank" rel="noopener" id="proj-2" data-search="parking meter fsm vhdl finite state machine vivado mealy moore">
+          <span class="case-icon case-icon--accent2"><i class="ph ph-ticket" aria-hidden="true"></i></span>
+          <span class="case-body">
+            <span class="case-title">Parking Meter FSM in VHDL</span>
+            <span class="stack-badges">
+              <span class="badge"><i class="ph ph-cpu" aria-hidden="true"></i>VHDL</span>
+              <span class="badge"><i class="ph ph-flow-arrow" aria-hidden="true"></i>Vivado</span>
+            </span>
+            <span class="case-text" data-i18n="projects.p2.desc">Máquina de estados finitos en VHDL para un parquímetro: inserción de monedas, emisión de tickets y control de capacidad con lógica secuencial síncrona. Modelado Mealy/Moore, mapas de Karnaugh y verificación por simulación de formas de onda.</span>
+            <span class="case-link"><span data-i18n="projects.viewGithub">Ver en GitHub</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </span>
+        </a>
+
+        <a class="case-card grow-link" href="https://github.com/yamilamontilla/Python-Course.git" target="_blank" rel="noopener" id="proj-3" data-search="python course udemy poo oop">
+          <span class="case-icon"><i class="devicon-python-plain colored"></i></span>
+          <span class="case-body">
+            <span class="case-title">Python 3.13: Learn From Zero to Pro</span>
+            <span class="stack-badges">
+              <span class="badge"><i class="devicon-python-plain colored"></i>Python</span>
+            </span>
+            <span class="case-text" data-i18n="projects.p3.desc">Código, ejercicios y miniproyectos del curso de Python 3.13 (Udemy, 7h): de la sintaxis básica a estructuras de datos, programación modular y programación orientada a objetos.</span>
+            <span class="case-link"><span data-i18n="projects.viewGithub">Ver en GitHub</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </span>
+        </a>
+
+        <a class="case-card grow-link" href="https://github.com/yamilamontilla/Simple-4-bit-Arithmetic-Logic-Unit-ALU-Design-in-VHDL.git" target="_blank" rel="noopener" id="proj-4" data-search="alu 4 bit arithmetic logic unit vhdl vivado combinational">
+          <span class="case-icon case-icon--accent2"><i class="ph ph-math-operations" aria-hidden="true"></i></span>
+          <span class="case-body">
+            <span class="case-title">4-bit ALU Design in VHDL</span>
+            <span class="stack-badges">
+              <span class="badge"><i class="ph ph-cpu" aria-hidden="true"></i>VHDL</span>
+              <span class="badge"><i class="ph ph-flow-arrow" aria-hidden="true"></i>Vivado</span>
+            </span>
+            <span class="case-text" data-i18n="projects.p4.desc">Unidad Aritmético-Lógica de 4 bits en VHDL: cuatro operaciones aritméticas y lógicas sobre dos entradas, verificadas en aritmética de complemento a dos. Diseño, simulación y corrección de tablas de verdad en Vivado.</span>
+            <span class="case-link"><span data-i18n="projects.viewGithub">Ver en GitHub</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </span>
+        </a>
+
+        <a class="case-card grow-link" href="https://github.com/yamilamontilla/C-Fundamentals-Projects.git" target="_blank" rel="noopener" id="proj-5" data-search="c fundamentals projects memory recursion sorting matrix">
+          <span class="case-icon"><i class="devicon-c-plain colored"></i></span>
+          <span class="case-body">
+            <span class="case-title">C Fundamentals Projects</span>
+            <span class="stack-badges">
+              <span class="badge"><i class="devicon-c-plain colored"></i>C</span>
+            </span>
+            <span class="case-text" data-i18n="projects.p5.desc">Programas para reforzar los fundamentos de C: gestión de memoria, recursividad, entrada/salida de archivos, algoritmos de ordenación y estructuras de datos básicas, con enfoque en resolución de problemas.</span>
+            <span class="case-link"><span data-i18n="projects.viewGithub">Ver en GitHub</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </span>
+        </a>
+
+        <a class="case-card grow-link" href="https://github.com/yamilamontilla/computer-architecture-mips.git" target="_blank" rel="noopener" id="proj-6" data-search="mips assembly computer architecture registers">
+          <span class="case-icon case-icon--accent2"><i class="devicon-assembly-line colored"></i></span>
+          <span class="case-body">
+            <span class="case-title">Computer Architecture · MIPS</span>
+            <span class="stack-badges">
+              <span class="badge"><i class="devicon-assembly-line colored"></i>MIPS Assembly</span>
+            </span>
+            <span class="case-text" data-i18n="projects.p6.desc">Programas en ensamblador MIPS para Arquitectura de Computadores: optimización de código, estructuras de control, operaciones con enteros y coma flotante, arrays y manipulación de cadenas.</span>
+            <span class="case-link"><span data-i18n="projects.viewGithub">Ver en GitHub</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </span>
+        </a>
+
+        <article class="case-card case-card--soon" id="proj-7" data-search="poo oop java junit uml objetos">
+          <span class="case-icon"><i class="devicon-java-plain colored"></i></span>
+          <span class="case-body">
+            <span class="case-title" data-i18n="projects.p7.title">POO (Programación Orientada a Objetos)</span>
+            <span class="stack-badges">
+              <span class="badge"><i class="devicon-java-plain colored"></i>Java</span>
+              <span class="badge"><i class="ph ph-check-circle" aria-hidden="true"></i>JUnit</span>
+            </span>
+            <span class="case-text" data-i18n="projects.p7.desc">Arquitectura POO en Java: herencia, polimorfismo, interfaces y testing automatizado con JUnit. Repositorio en construcción.</span>
+            <span class="case-tag font-mono" data-i18n="projects.comingSoon">Coming Soon</span>
+          </span>
+        </article>
+
+        <a class="case-card grow-link" href="https://github.com/yamilamontilla/Portfolio.git" target="_blank" rel="noopener" id="proj-8" data-search="portfolio this site vanilla javascript">
+          <span class="case-icon case-icon--photo"><img src="img/foto.jpeg" alt="" loading="lazy" /></span>
+          <span class="case-body">
+            <span class="case-title" data-i18n="projects.p8.title">Portfolio</span>
+            <span class="stack-badges">
+              <span class="badge"><i class="devicon-html5-plain colored"></i>HTML5</span>
+              <span class="badge"><i class="devicon-css3-plain colored"></i>CSS3</span>
+              <span class="badge"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+            </span>
+            <span class="case-text" data-i18n="projects.p8.desc">Este mismo sitio: HTML, CSS y JavaScript puros, sin frameworks. Diseño, contenido y despliegue continuo en GitHub Pages.</span>
+            <span class="case-link"><span data-i18n="projects.viewGithub">Ver en GitHub</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOOLBOX ============ -->
+  <section id="toolbox" class="section toolbox-section">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2 class="section-title" data-i18n="toolbox.title">Herramientas</h2>
+        <p class="section-subtitle" data-i18n="toolbox.subtitle">Toca una categoría para ver sus proyectos.</p>
+      </div>
+
+      <div class="door-row">
+        <button type="button" class="door-card" data-category="backend">
+          <i class="ph ph-database door-icon" aria-hidden="true"></i>
+          <span class="door-title" data-i18n="toolbox.backend">Backend</span>
+          <span class="door-count font-mono">2</span>
+        </button>
+        <button type="button" class="door-card" data-category="frontend">
+          <i class="ph ph-browser door-icon" aria-hidden="true"></i>
+          <span class="door-title" data-i18n="toolbox.frontend">Frontend</span>
+          <span class="door-count font-mono">1</span>
+        </button>
+        <button type="button" class="door-card" data-category="systems">
+          <i class="ph ph-cpu door-icon" aria-hidden="true"></i>
+          <span class="door-title" data-i18n="toolbox.systems">C / VHDL / MIPS</span>
+          <span class="door-count font-mono">5</span>
+        </button>
+        <button type="button" class="door-card" data-category="tools">
+          <i class="ph ph-wrench door-icon" aria-hidden="true"></i>
+          <span class="door-title" data-i18n="toolbox.tools">Tools</span>
+          <span class="door-count font-mono">3</span>
+        </button>
+      </div>
+
+      <div class="door-expand" id="door-expand" data-open="false">
+        <div class="door-expand-inner">
+          <div class="door-expand-head">
+            <h3 class="font-mono" id="door-expand-title">—</h3>
+            <button type="button" class="door-close" id="door-close" aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button>
+          </div>
+          <div class="door-expand-chips" id="door-expand-chips"></div>
+          <div class="door-expand-projects" id="door-expand-projects"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ JOURNEY ============ -->
+  <section id="journey" class="section journey-section">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <h2 class="section-title" data-i18n="journey.title">Recorrido</h2>
+        <p class="section-subtitle" data-i18n="journey.subtitle">De lo más reciente hacia atrás: código y trabajo, en paralelo.</p>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline-item reveal">
+          <div class="timeline-media"><img src="img/bernabeu.png" alt="Legends · Santiago Bernabéu" loading="lazy" /></div>
+          <div class="timeline-content">
+            <div class="timeline-date font-mono">SEP 2025 — AGO 2026</div>
+            <h3 data-i18n="journey.e1.title">Legends · Bernabéu VIP Operations</h3>
+            <p data-i18n="journey.e1.desc">Operativo de hospitalidad VIP en el Santiago Bernabéu. En marzo de 2026 pasé a coordinar equipos y logística en eventos de alta exigencia: planificación, inventario y resolución de incidencias en tiempo real.</p>
+            <div class="timeline-tags">
+              <span class="tag" data-i18n="journey.tag.leadership">Liderazgo</span>
+              <span class="tag" data-i18n="journey.tag.logistics">Logística</span>
+              <span class="tag" data-i18n="journey.tag.pressure">Alta presión</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal" style="--reveal-delay:70ms">
+          <div class="timeline-media"><img src="img/python.png" alt="Curso Python 3.13" loading="lazy" /></div>
+          <div class="timeline-content">
+            <div class="timeline-date font-mono">2026</div>
+            <h3 data-i18n="journey.e2.title">Formación intensiva en Python 3.13</h3>
+            <p data-i18n="journey.e2.desc">Patrones de diseño, clases abstractas, encapsulamiento y arquitectura modular aplicada al procesamiento de datos.</p>
+            <div class="timeline-tags"><span class="tag">Python</span><span class="tag" data-i18n="journey.tag.selfTaught">Autoaprendizaje</span></div>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal" style="--reveal-delay:140ms">
+          <div class="timeline-media"><img src="img/compu.png" alt="Ingeniería de Computadores" loading="lazy" /></div>
+          <div class="timeline-content">
+            <div class="timeline-date font-mono">2024 — <span data-i18n="journey.ongoing">EN CURSO</span></div>
+            <h3 data-i18n="journey.e3.title">Grado en Ingeniería de Computadores</h3>
+            <p data-i18n="journey.e3.desc">Empecé el grado con una pregunta fija en la cabeza: qué hay debajo del código que ya sabía escribir. La respuesta, de momento, incluye C, VHDL y bastante café.</p>
+            <div class="timeline-tags"><span class="tag">C</span><span class="tag">VHDL</span><span class="tag" data-i18n="journey.tag.lowLevel">Bajo nivel</span></div>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal" style="--reveal-delay:210ms">
+          <div class="timeline-media"><img src="img/tenis.png" alt="Mutua Madrid Open" loading="lazy" /></div>
+          <div class="timeline-content">
+            <div class="timeline-date font-mono" data-i18n="journey.e4.date">ABR 2023 &amp; 2024</div>
+            <h3 data-i18n="journey.e4.title">Mutua Madrid Open · ATP/WTA</h3>
+            <p data-i18n="journey.e4.desc">Coordinación de accesos y flujo de público en un torneo ATP/WTA de primer nivel, con atención bilingüe español/inglés en un evento masivo y de alta visibilidad.</p>
+            <div class="timeline-tags"><span class="tag" data-i18n="journey.tag.bilingual">Bilingüe</span><span class="tag" data-i18n="journey.tag.events">Eventos masivos</span></div>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal" style="--reveal-delay:280ms">
+          <div class="timeline-media"><img src="img/bruselas.png" alt="Brussels Operations & Finance" loading="lazy" /></div>
+          <div class="timeline-content">
+            <div class="timeline-date font-mono" data-i18n="journey.e5.date">VERANOS 2023 — 2024</div>
+            <h3 data-i18n="journey.e5.title">Brussels Operations &amp; Finance</h3>
+            <p data-i18n="journey.e5.desc">Dos veranos en un pub cien por cien en inglés: coctelería de alto volumen, gestión de proveedores y cierres de caja.</p>
+            <div class="timeline-tags"><span class="tag">English</span><span class="tag" data-i18n="journey.tag.highVolume">Alto volumen</span></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section contact-section">
+    <div class="section-inner contact-inner">
+      <h2 class="contact-title reveal" data-i18n="contact.title">Construyamos algo.</h2>
+      <p class="contact-desc reveal" style="--reveal-delay:60ms" data-i18n="contact.desc">¿Tienes un proyecto, un puesto abierto o simplemente te apetece hablar de ingeniería? Escríbeme.</p>
+
+      <a href="mailto:yamila.montilla@gmail.com" class="btn btn-primary magnetic contact-cta reveal" style="--reveal-delay:120ms" data-i18n="cta.contact">Hablemos</a>
+
+      <button type="button" class="email-copy font-mono reveal" style="--reveal-delay:150ms" id="email-copy" data-email="yamila.montilla@gmail.com">
+        <i class="ph ph-copy" aria-hidden="true"></i>
+        <span id="email-copy-text">yamila.montilla@gmail.com</span>
+      </button>
+
+      <div class="social-row social-row--lg reveal" style="--reveal-delay:160ms">
+        <a href="https://github.com/yamilamontilla" target="_blank" rel="noopener" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+        <a href="https://www.linkedin.com/in/yamila-montilla/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:yamila.montilla@gmail.com" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+      </div>
+
+      <div class="status-chip font-mono reveal" style="--reveal-delay:200ms">
+        <span class="hud-dot" aria-hidden="true"></span><span data-i18n="contact.status">Disponible para nuevas oportunidades</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="font-mono footer-copy" id="footer-copy">© 2026 Yamila Montilla</span>
+    <a href="#top" class="back-to-top" aria-label="Back to top"><i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
