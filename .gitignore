@@ -4,7 +4,7 @@
 # Excepciones: Permitir únicamente los archivos esenciales del portfolio
 !.gitignore
 !index.html
-!styles.css
+!style.css
 !script.js
 !img/
 !img/*
