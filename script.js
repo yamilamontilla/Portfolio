@@ -22,19 +22,19 @@
 
       "hero.hud.status": "SYSTEM: ONLINE",
       "hero.hud.loc": "MADRID, ES",
-      "hero.role": "Estudiante de Ingeniería de Computadores · Desarrolladora Backend",
-      "hero.desc": "Diseño software desde la lógica hacia arriba: memoria, estructuras de datos y arquitectura limpia antes que la interfaz. Java y Python en el backend, C y VHDL para entender qué ocurre por debajo.",
+      "hero.role": "Ingeniería de Computadores · Desarrolladora Full Stack",
+      "hero.desc": "Diseño software desde la lógica hacia arriba: memoria, estructuras de datos y arquitectura limpia antes que la interfaz. Java y Python en el backend, HTML, CSS y JavaScript en el frontend, y C y VHDL para entender qué ocurre por debajo.",
       "hero.cta.work": "Ver proyectos",
 
       "about.title": "Sobre mí",
-      "about.intro": "Empecé a programar queriendo entender qué pasa por debajo del código, y ese impulso no se me ha ido: sigo prefiriendo abrir la caja antes de usarla. Hoy eso se traduce en backend con Java y Python, estructuras de datos y memoria en C, y algo de hardware en VHDL, para no perder de vista ninguna capa del sistema.",
+      "about.intro": "Empecé a programar queriendo entender qué pasa por debajo del código, y ese impulso no se me ha ido: sigo prefiriendo abrir la caja antes de usarla. Hoy eso significa moverme por toda la pila: backend con Java y Python, frontend con HTML, CSS y JavaScript, memoria y estructuras de datos en C, y algo de hardware en VHDL, sin perder de vista ninguna capa del sistema.",
       "about.value1.title": "Desarrollar",
       "about.value1.desc": "Solidez en programación orientada a objetos con Java y Python: código modular, testing automatizado con JUnit y una arquitectura que se puede leer sin manual de instrucciones.",
       "about.value2.title": "Resolver",
       "about.value2.desc": "Pensamiento algorítmico y gestión de memoria en C, más la costumbre de resolver problemas en directo bajo presión: en un backend o en medio de un estadio lleno.",
       "about.value3.title": "Colaborar",
       "about.value3.desc": "Liderazgo de equipos, comunicación bilingüe en español e inglés, y la capacidad de explicar un problema técnico a quien no lo es, sin perder precisión.",
-      "about.code.role": '"Ingeniería de Computadores · Backend"',
+      "about.code.role": '"Ingeniería de Computadores · Full Stack"',
       "about.code.status": '"open_to_work"',
       "about.intl": "Perfil internacional", "about.intl.es": "España", "about.intl.be": "Bélgica", "about.intl.ae": "EAU",
 
@@ -81,8 +81,8 @@
       "contact.status": "Disponible para nuevas oportunidades",
       "contact.copied": "Copiado ✓",
 
-      "meta.description": "Yamila Montilla — Estudiante de Ingeniería de Computadores y desarrolladora backend en Madrid. Java, Python, C, VHDL.",
-      "meta.title": "Yamila Montilla — Backend Developer",
+      "meta.description": "Yamila Montilla — Ingeniería de Computadores. Desarrolladora Full Stack en Madrid. Java, Python, C, VHDL.",
+      "meta.title": "Yamila Montilla",
       "control.theme": "Cambiar tema",
       "control.menuOpen": "Abrir menú", "control.menuClose": "Cerrar menú",
     },
@@ -99,19 +99,19 @@
 
       "hero.hud.status": "SYSTEM: ONLINE",
       "hero.hud.loc": "MADRID, ES",
-      "hero.role": "Computer Engineering Student · Backend Developer",
-      "hero.desc": "I design software from the logic up: memory, data structures and clean architecture before the interface. Java and Python in the backend, C and VHDL to understand what happens underneath.",
+      "hero.role": "Computer Engineering · Full Stack Developer",
+      "hero.desc": "I design software from the logic up: memory, data structures and clean architecture before the interface. Java and Python in the backend, HTML, CSS and JavaScript in the frontend, and C and VHDL to understand what happens underneath.",
       "hero.cta.work": "View projects",
 
       "about.title": "About",
-      "about.intro": "I started coding because I wanted to know what happens underneath, and that instinct never really left: I still prefer opening the box before using it. These days that means backend work in Java and Python, data structures and memory in C, and a bit of hardware in VHDL, so no layer of the system stays a mystery.",
+      "about.intro": "I started coding because I wanted to know what happens underneath, and that instinct never really left: I still prefer opening the box before using it. These days that means working across the stack: backend in Java and Python, frontend in HTML, CSS and JavaScript, memory and data structures in C, and a bit of hardware in VHDL, so no layer of the system stays a mystery.",
       "about.value1.title": "Build",
       "about.value1.desc": "Solid object-oriented programming in Java and Python: modular code, automated testing with JUnit, and an architecture you can read without an instruction manual.",
       "about.value2.title": "Solve",
       "about.value2.desc": "Algorithmic thinking and memory management in C, plus a habit of solving problems live under pressure, whether that's in a backend or in the middle of a packed stadium.",
       "about.value3.title": "Collaborate",
       "about.value3.desc": "Team leadership, bilingual communication in Spanish and English, and the ability to explain a technical problem to someone outside tech without losing precision.",
-      "about.code.role": '"Computer Engineering · Backend"',
+      "about.code.role": '"Computer Engineering · Full Stack"',
       "about.code.status": '"open_to_work"',
       "about.intl": "International profile", "about.intl.es": "Spain", "about.intl.be": "Belgium", "about.intl.ae": "UAE",
 
@@ -158,8 +158,8 @@
       "contact.status": "Open to new opportunities",
       "contact.copied": "Copied ✓",
 
-      "meta.description": "Yamila Montilla — Computer Engineering student and backend developer in Madrid. Java, Python, C, VHDL.",
-      "meta.title": "Yamila Montilla — Backend Developer",
+      "meta.description": "Yamila Montilla — Computer Engineering. Full Stack Developer in Madrid. Java, Python, C, VHDL.",
+      "meta.title": "Yamila Montilla",
       "control.theme": "Toggle theme",
       "control.menuOpen": "Open menu", "control.menuClose": "Close menu",
     },
@@ -369,12 +369,51 @@
     target.addEventListener("animationend", () => target.classList.remove("is-highlighted"), { once: true });
   }
 
+  /* Search covers projects, toolbox categories and journey entries, and matches
+     regardless of which language is currently displayed: keywords are built from
+     both the es and en dictionary entries, not just whatever text is on screen
+     right now. So "html" finds Portfolio, "bernabeu" finds the Legends entry,
+     and "SQL" opens the Backend door, no matter which language is active. */
   function buildSearchIndex() {
-    return [...document.querySelectorAll(".case-card[data-search]")].map((card) => {
+    const index = [];
+
+    document.querySelectorAll(".case-card[data-search]").forEach((card) => {
+      const num = card.id.replace("proj-", "");
       const title = card.querySelector(".case-title")?.textContent || "";
-      return { id: card.id, title, keywords: stripDiacritics(`${title} ${card.getAttribute("data-search")}`) };
+      const badges = [...card.querySelectorAll(".badge")].map((b) => b.textContent).join(" ");
+      const extra = card.getAttribute("data-search") || "";
+      const bilingual = ["desc", "title"].map((k) => `${dict.es[`projects.p${num}.${k}`] || ""} ${dict.en[`projects.p${num}.${k}`] || ""}`).join(" ");
+      index.push({
+        id: card.id, kind: "project", title,
+        keywords: stripDiacritics([title, badges, extra, bilingual].join(" ")),
+      });
     });
+
+    Object.entries(CATEGORIES).forEach(([key, cat]) => {
+      const labelEs = dict.es[`toolbox.${key}`] || key;
+      const labelEn = dict.en[`toolbox.${key}`] || key;
+      const chipWords = cat.chips.map((c) => c.label).join(" ");
+      index.push({
+        id: `door-${key}`, kind: "toolbox", category: key, title: labelEs,
+        keywords: stripDiacritics([labelEs, labelEn, chipWords, key].join(" ")),
+      });
+    });
+
+    document.querySelectorAll(".timeline-item[id]").forEach((item) => {
+      const num = item.id.replace("journey-", "");
+      const title = item.querySelector("h3")?.textContent || "";
+      const tags = [...item.querySelectorAll(".tag")].map((t) => t.textContent).join(" ");
+      const bilingual = ["title", "desc"].map((k) => `${dict.es[`journey.e${num}.${k}`] || ""} ${dict.en[`journey.e${num}.${k}`] || ""}`).join(" ");
+      index.push({
+        id: item.id, kind: "journey", title,
+        keywords: stripDiacritics([title, tags, bilingual].join(" ")),
+      });
+    });
+
+    return index;
   }
+
+  const KIND_META = { project: "PROJECT", toolbox: "TOOLBOX", journey: "JOURNEY" };
 
   function initPalette() {
     const backdrop = document.getElementById("palette-backdrop");
@@ -406,14 +445,25 @@
         const row = document.createElement("button");
         row.type = "button";
         row.className = "palette-result" + (i === activeIndex ? " is-active" : "");
-        row.innerHTML = `<i class="ph ph-cube" aria-hidden="true"></i><span>${r.title}</span><span class="palette-result-meta">PROJECT</span>`;
-        row.addEventListener("mouseenter", () => { activeIndex = i; paint(); });
+        row.innerHTML = `<i class="ph ph-cube" aria-hidden="true"></i><span>${r.title}</span><span class="palette-result-meta">${KIND_META[r.kind] || ""}</span>`;
+        // Hover only toggles a class on the existing buttons — never rebuild the
+        // list here. Rebuilding on mouseenter used to destroy the very button
+        // the pointer was resting on right before the click landed, so the
+        // click would silently miss its target.
+        row.addEventListener("mouseenter", () => {
+          activeIndex = i;
+          resultsEl.querySelectorAll(".palette-result").forEach((el, idx) => el.classList.toggle("is-active", idx === i));
+        });
         row.addEventListener("click", () => selectResult(r));
         resultsEl.appendChild(row);
       });
     }
 
     function selectResult(r) {
+      if (r.kind === "toolbox") {
+        const doorEl = document.getElementById(r.id);
+        if (doorEl && !doorEl.classList.contains("is-active")) doorEl.click();
+      }
       highlightAndScrollTo(r.id);
       close();
     }
@@ -476,7 +526,7 @@
       chips: [
         { label: "C", icon: "devicon-c-plain colored" },
         { label: "VHDL", icon: "ph ph-cpu" },
-        { label: "MIPS Assembly", icon: "devicon-assembly-line colored" },
+        { label: "MIPS Assembly", icon: "ph ph-terminal-window" },
         { label: "Punteros / Memoria", icon: "ph ph-stack" },
       ],
       projects: ["proj-1", "proj-2", "proj-4", "proj-5", "proj-6"],
